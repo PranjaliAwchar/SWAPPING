@@ -17,12 +17,12 @@ public:
 
 void swap(Swap& s1)
 {
-    cout << "\nBefore Swapping: " << s1.a << " " << s1.b;
+    cout << "\nBefore Swapping: a = " << s1.a << " ,b = " << s1.b;
  
     s1.temp = s1.a;
     s1.a = s1.b;
     s1.b = s1.temp;
-    cout << "\nAfter Swapping: " << s1.a << " " << s1.b;
+    cout << "\nAfter Swapping: a = " << s1.a << " ,b = " << s1.b;
 }
  
 int main()
