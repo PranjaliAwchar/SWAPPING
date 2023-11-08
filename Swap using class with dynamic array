@@ -1,0 +1,49 @@
+#include <iostream>
+
+class NumberArray {
+private:
+    int *numbers; // Pointer to hold numbers
+    int size;
+
+public:
+    // Constructor to initialize the dynamic array with two numbers
+    NumberArray(int num1, int num2) : size(2) {
+        numbers = new int[size];
+        numbers[0] = num1;
+        numbers[1] = num2;
+    }
+
+    // Destructor to deallocate memory
+    ~NumberArray() {
+        delete[] numbers;
+    }
+
+    void swapNumbers() {
+        if (size >= 2) {
+            int temp = numbers[0];
+            numbers[0] = numbers[1];
+            numbers[1] = temp;
+        } else {
+            std::cout << "Insufficient numbers to swap." << std::endl;
+        }
+    }
+
+    void display() {
+        std::cout << "Numbers: " << numbers[0] << " " << numbers[1] << std::endl;
+    }
+};
+
+int main() {
+    NumberArray nums(5, 10);
+
+    std::cout << "Before swapping: ";
+    nums.display();
+
+    // Swapping numbers using the class method
+    nums.swapNumbers();
+
+    std::cout << "After swapping: ";
+    nums.display();
+
+    return 0;
+}
