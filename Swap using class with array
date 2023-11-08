@@ -1,0 +1,37 @@
+#include <iostream>
+
+class NumberArray {
+private:
+    int numbers[2]; // Array to hold two numbers
+
+public:
+    NumberArray(int num1, int num2) {
+        numbers[0] = num1;
+        numbers[1] = num2;
+    }
+
+    void swapNumbers() {
+        int temp = numbers[0];
+        numbers[0] = numbers[1];
+        numbers[1] = temp;
+    }
+
+    void display() {
+        std::cout << "Numbers: " << numbers[0] << " " << numbers[1] << std::endl;
+    }
+};
+
+int main() {
+    NumberArray nums(5, 10);
+
+    std::cout << "Before swapping: ";
+    nums.display();
+
+    // Swapping numbers using the class method
+    nums.swapNumbers();
+
+    std::cout << "After swapping: ";
+    nums.display();
+
+    return 0;
+}
