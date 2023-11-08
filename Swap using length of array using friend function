@@ -1,0 +1,41 @@
+
+#include <iostream>
+
+class NumberArray {
+private:
+    int numbers[2]; // Array to hold two numbers
+
+public:
+    NumberArray(int num1, int num2) {
+        numbers[0] = num1;
+        numbers[1] = num2;
+    }
+
+    // Friend function to swap numbers using array length
+    friend void swap(NumberArray &arr);
+
+    void display() {
+        std::cout << "Numbers: " << numbers[0] << " " << numbers[1] << std::endl;
+    }
+};
+
+void swap(NumberArray &arr) {
+    int temp = arr.numbers[0];
+    arr.numbers[0] = arr.numbers[1];
+    arr.numbers[1] = temp;
+}
+
+int main() {
+    NumberArray nums(5, 10);
+
+    std::cout << "Before swapping: ";
+    nums.display();
+
+    // Swapping using friend function and array length
+    swap(nums);
+
+    std::cout << "After swapping: ";
+    nums.display();
+
+    return 0;
+}
