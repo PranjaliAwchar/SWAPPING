@@ -33,7 +33,7 @@ void Swap::display() {
 int main()
 {
  // creating object of class
-  StudyFame s;
+  Swap s;
   
   s.getData();
   cout << "Before swapping" << endl;
